@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formulär</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="display mb-4">Logga in</h1>
+        <div class="login-form">
+            <form action="ta-emot.php" method="POST">
+                <div class="name">
+                    <!-- Namn -->
+                    <label for="anamn">Namn</label>
+                    <input id="anamn" class="form-control w-75" type="number" name="anamn" placeholder="exempel@gmail.com">
+                </div>
+
+                <div class="pass">
+                    <!-- Lösenord -->
+                    <label for="pass">Lösenord</label>
+                    <input id="pass" class="form-control w-75" type="number" name="pass">
+                    
+                </div>
+
+                <!-- Är du över 18? -->
+                <div class="18plus">
+                    <p class="mb-0 mt-4">Är du över 18?</p>
+                </div>
+                <!-- Checkboxarna -->
+                <div class="form-group form-check">
+
+                    <!-- Ja -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="yes" name="yes">
+                        <label class="form-check-label" for="yes">Ja</label>
+                    </div>
+                    <!-- Nej -->
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="no" name="no">
+                        <label class="form-check-label" for="no">Nej</label>
+                    </div>
+                  </div>
+
+                  <div class="text-area">
+                      <textarea name="" id="" cols="40" rows="5"></textarea>
+                  </div>
+                <!-- Registera dig -->
+                <button type="submit" class="btn btn-primary">Registera</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
