@@ -9,13 +9,13 @@
 <body>
     <div class="kontainer">
         <?php
-        echo "<h1>Dagens horoskop</h1>";
+        echo "<h1>Info om FL Studio</h1>";
 
         // Hämta sidan
-        $sidan = file_get_contents("https://astro.elle.se");
+        $sidan = file_get_contents("https://sv.wikipedia.org/wiki/FL_Studio");
 
         // Sök början på texten
-        $start = strpos($sidan, "c-post_content__wrapper");
+        $start = strpos($sidan, "<b>");
 
 
         if ($start !== false) {
@@ -25,13 +25,20 @@
         }
 
         // Hitta var horosopet slutar
-        $slut = strpos($sidan, "c-post_tag__wrapper", $start);
+        $slut = strpos($sidan, "använder FL Studio.", $start);
 
         if ($slut !== false) {
             echo "<p>Horoskopet slutar på position $slut</p>";
         } else {
             echo "<p>Hittade inte horoskopets början!</p>";
         }
+
+        $horoskopText = substr($sidan, $start, $slut - $start);
+
+        echo "<p>$horoskopText</p>";
+
+        
+
 
         ?>
     </div>
