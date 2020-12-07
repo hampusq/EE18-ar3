@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+/* Enkel CSS-reset */
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body, h1, h2, h3, h4, h5, h6, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #fafafa;
+}
+.kontainer {
+    width: 600px;
+    padding: 2em;
+    margin: 3em auto;
+    background: #fff;
+    border-radius: 5px;
+    font-family: 'Open Sans', sans-serif;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 12px #ffffff;
+    color: #000000;
+}
+
+h1, h2, h3 {
+    color: #555555;
+}
+h1, h2, h3, p {
+    margin: 0.5em 0;
+}
+h3 {
+    margin-top: 2em;
+}
+
+form {
+    margin: 1em 0;
+    padding: 1em;
+    font-size: 0.9em;
+    color: #000000;
+    background: #ffffff;
+    border-radius: 0.3em;
+}
+form label {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    margin: 10px 0;
+    padding: 0;
+}
+form input, form textarea {
+    padding: 0.5em;
+    margin-top: -0.4em;
+    font-style: italic;
+    border-radius: 0.3em;
+    border: 2px solid #55a5d2;
+}
+form textarea {
+    height: 10em;
+}
+form button {
+    margin: 1em 0;
+    padding: 0.7em;
+    border-radius: 0.3em;
+    border: none;
+    font-weight: bold;
+    color: #FFF;
+    background-color: #55a5d2;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2em 0;
+}
+table th, table td {
+    padding: 0.5em;
+    text-align: left;
+}
+table th {
+    background: #305A85;
+    color: #FFF;
+}
+table tr:nth-child(even) {
+    background: #f1f1f1;
+}
+table tr:nth-child(odd) {
+    background: #FFF;
+}
+table .fa {
+    color: #55a5d2;
+}
