@@ -26,6 +26,7 @@ body {
     color: #4e4e4e;
 }
 
+
 h1, h2, h3 {
     color: #9c813d;
 }
@@ -92,4 +93,10 @@ table tr:nth-child(odd) {
 }
 table .fa {
     color: #55a5d2;
+}
+
+
+.inlagg {
+    color: black;
+    padding: 20px;
 }
