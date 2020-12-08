@@ -25,7 +25,7 @@ include "./resurser/conn.php";
 
         <?php
         // 2. Ställ en SQL-fråga
-        $sql = "SELECT * FROM inlagg";
+        $sql = "SELECT * FROM track_table";
         $result = $conn->query($sql);
 
         // Gick det bra?
@@ -38,9 +38,9 @@ include "./resurser/conn.php";
         // Presentera resultatet
         while ($rad = $result->fetch_assoc()) {
             echo "<div class=\"inlagg\">";
-            echo "<h5>$rad[header]</h5>";
-            echo "<h6>$rad[postDate]</h6>";
-            echo "<p>$rad[postText]</p>";
+            echo "<h5>$rad[track_artist]</h5>";
+            echo "<h6>$rad[track_name]</h6>";
+            echo "<p>$rad[track_filename]</p>";
             echo "</div>";  
         }
 

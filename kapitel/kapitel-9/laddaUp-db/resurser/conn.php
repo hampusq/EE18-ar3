@@ -1,9 +1,9 @@
 <?php
 // Inlogg till databas
 $host = "localhost";
-$db = "musik";
-$user = "musik";
-$pass = "L6iiFfEpkjSjtFs1";
+$db = "musikadmin";
+$user = "musikAdmin";
+$pass = "B6btWtlQehWN4enO";
 
 // Steg 1 - skapa en anslutning
 $conn = new mysqli($host, $user, $pass, $db);

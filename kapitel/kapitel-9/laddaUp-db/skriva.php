@@ -22,36 +22,55 @@ include "./resurser/conn.php";
                 <li class="nav-item"><a class="nav-link" href="./lista.php">Admin</a></li>
             </ul>
         </nav>
-        <form action="#" method="POST">
-            <label>Ange rubrik <input type="file" name="fileName"></label>
-
-
+        <form action="#" enctype="multipart/form-data" method="POST">
+            <label>Artist <input type="text" name="track_artist"></label>
+            <label>Låtnamn <input type="text" name="track_name"></label>
+            <label>Ladda up <input type="file" name="uploaded_file"></label>
             <button>Spara</button>
         </form>
         <?php
         // Ta emot det som skickas
-        $header = filter_input(INPUT_POST, 'header', FILTER_SANITIZE_STRING);
-        $postText = filter_input(INPUT_POST, 'postText', FILTER_SANITIZE_STRING);
 
-        // Om data finns..
-        if ($header && $postText) {
+               # code...
+        
+            $track_artist = filter_input(INPUT_POST, 'track_artist', FILTER_SANITIZE_STRING);
+            $track_name = filter_input(INPUT_POST, 'track_name', FILTER_SANITIZE_STRING);
+            
+            
+
+            
+            
+       
+
+        if ($track_artist) {
             // SQL-satsen
-            $sql = "INSERT INTO inlagg (header, postText) VALUES ('$header', '$postText')";
+
+            // Nytt filnamn
+            $location = $_FILES['uploaded_file']['tmp_name'];
+            
+       
+
+           $sql = "INSERT INTO track_table (track_artist, track_name, `location`) VALUES ('$track_artist', '$track_name', '$location')";
+
+
+            $uploadpath = 'upload/';   // Här läggs filerna som laddas upp
+            $allowtype = array('mp3', 'wav'); // Tillåt bara mp3 & wav filer
 
             // Steg 2: nu kör vi sql-satsen
             $result = $conn->query($sql);
 
             // Gick det bra att köra SQL-satsen? test123
 
-            if (!$resultat) {
-                die("Något gick fel med SQL-satsen");
+            if (!$result) {
+                die("Något gick fel, prova igen");
             } else {
-                echo "<p>Inläggen kunde skrivas</p>";
+                echo "<p>Laddade upp filen!</p>";
             }
 
             // Steg 3: Stänga ned anslutningen
             $conn->close();
         }
+
         ?>
     </div>
 </body>
