@@ -37,7 +37,7 @@
             // Steg 2: Nu kör vi 
             $result = $conn->query($sql);
 
-            // Gick det bra att köra SQL-satsen?
+            // Gick det bra att köra SQL-satsen? test123
 
             if (!$resultat) {
                 die("Något gick fel med SQL-satsen");
