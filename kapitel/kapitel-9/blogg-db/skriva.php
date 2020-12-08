@@ -1,3 +1,6 @@
+<?php
+include "./resurser/conn.php";
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
@@ -7,12 +10,11 @@
     <title></title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-
 </head>
 
 <body>
-    <div class="kontainer text-center p-5">
-        <h1>Min Blogg</h1>
+<div class="kontainer">
+        <h1>Min blogg</h1>
         <nav>
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a class="nav-link" href="./lasa.php">Läsa</a></li>
@@ -21,8 +23,8 @@
             </ul>
         </nav>
         <form action="#" method="POST">
-            <label>Ange Rubrik <input type="text" name="header"></label>
-            <label>Ange Text <textarea name="postText"></textarea></label>
+            <label>Ange rubrik <input type="text" name="header"></label>
+            <label>Ange text <textarea name="postText"></textarea></label>
             <button>Spara</button>
         </form>
         <?php
@@ -32,9 +34,10 @@
 
         // Om data finns..
         if ($header && $postText) {
-            // Programmets kod
-            $sql = "INSERT INTO post (header, postText) VALUES ('$header', '$postText')";
-            // Steg 2: Nu kör vi 
+            // SQL-satsen
+            $sql = "INSERT INTO inlagg (header, postText) VALUES ('$header', '$postText')";
+
+            // Steg 2: nu kör vi sql-satsen
             $result = $conn->query($sql);
 
             // Gick det bra att köra SQL-satsen? test123
@@ -42,8 +45,10 @@
             if (!$resultat) {
                 die("Något gick fel med SQL-satsen");
             } else {
-                echo "<p>Inlagget har registrerats</p>";
+                echo "<p>Inläggen kunde skrivas</p>";
             }
+
+            // Steg 3: Stänga ned anslutningen
             $conn->close();
         }
         ?>

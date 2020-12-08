@@ -3,21 +3,16 @@
 $host = "localhost";
 $db = "blogg";
 $user = "blogg";
-$pass = "1iLLc3Bos1Ou3Sg5";
+$pass = "M5iEcZT93Yq3nhaL";
 
-// Skapa en anslutning
+// Steg 1 - skapa en anslutning
 $conn = new mysqli($host, $user, $pass, $db);
 
-
-
 // Gick det bra att ansluta?
-
 if ($conn->connect_error) {
-    die("kunde inte ansluta:" . $conn->error);
+    die("Kunde inte ansluta: " . $conn->error);
 } else {
-    echo "<p>Det gick bra att ansluta till databasen</p>";
+    echo "<p>Gick bra ansluta till vårt databas!</p>";
 }
-
-
 
 ?>
