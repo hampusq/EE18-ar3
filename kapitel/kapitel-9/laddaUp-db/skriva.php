@@ -24,8 +24,6 @@ include "./resurser/conn.php";
         </nav>
         <form action="#" method="POST">
             <label>Ange rubrik <input type="file" name="fileName"></label>
-            <label>Ange rubrik <input type="submit" value="Upload Image" name="submit">
-
 
 
             <button>Spara</button>
